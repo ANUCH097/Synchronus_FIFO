@@ -1,4 +1,4 @@
-// ===================== Sequence item =====================
+//  Sequence item 
 class fifo_item extends uvm_sequence_item;
   `uvm_object_utils(fifo_item)
 
@@ -21,7 +21,7 @@ class fifo_item extends uvm_sequence_item;
   endfunction
 endclass
 
-// ===================== Sequences =====================
+//  Sequences 
 class fifo_base_seq extends uvm_sequence #(fifo_item);
   `uvm_object_utils(fifo_base_seq)
   int unsigned n = 10;
@@ -62,7 +62,8 @@ class fifo_rand_seq extends fifo_base_seq;
   `uvm_object_utils(fifo_rand_seq)
   int unsigned wr_w = 50;
   int unsigned rd_w = 50;
-  function new(string name = "fifo_rand_seq"); super.new(name); endfunction
+  function new(string name = "fifo_rand_seq"); super.new(name);
+  endfunction
   task body();
     repeat (n) `uvm_do_with(req, {
       wr_en dist { 1 := local::wr_w, 0 := 100 - local::wr_w };
