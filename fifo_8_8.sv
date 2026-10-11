@@ -1,7 +1,5 @@
 `timescale 1ns / 1ps
-// DUT: your FIFO with two fixes: reset is exclusive (else-begin) and
-// the mem reset loop is removed (pointers are enough).
-// Usable depth = 7 (3-bit pointers, one slot sacrificed).
+
 module fifo_8_8(
     input        clk,
     input        rst,
