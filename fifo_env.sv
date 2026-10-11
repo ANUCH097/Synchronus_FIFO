@@ -1,11 +1,10 @@
-// ===================== Scoreboard =====================
-// Reference model = SV queue. Checks (1) full/empty flags vs model,
-// (2) data_out vs expected data (appears one clock after a read).
+//  Scoreboard 
+
 class fifo_scoreboard extends uvm_scoreboard;
   `uvm_component_utils(fifo_scoreboard)
   uvm_analysis_imp #(fifo_item, fifo_scoreboard) imp;
 
-  localparam int DEPTH = 7;      // 8 entries, 3-bit pointers -> 7 usable
+  localparam int DEPTH = 7;      // 8 entries and 3-bit pointers it has 7 usable
   bit [7:0] model_q[$];
   bit       seen_reset, check_next;
   bit [7:0] exp_data;
