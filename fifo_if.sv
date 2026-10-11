@@ -21,7 +21,7 @@ interface fifo_if (input logic clk);
     input rst, wr_enb, rd_enb, data_in, data_out, full, empty;
   endclocking
 
-  // ---------------- Assertions (SVA) ----------------
+  //  Assertions (SVA) 
   // full and empty can never both be high
   a_full_empty_excl: assert property (
     @(posedge clk) disable iff (rst) !(full && empty))
