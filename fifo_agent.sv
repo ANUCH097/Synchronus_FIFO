@@ -1,4 +1,4 @@
-// ===================== Driver =====================
+//  Driver 
 class fifo_driver extends uvm_driver #(fifo_item);
   `uvm_component_utils(fifo_driver)
   virtual fifo_if vif;
@@ -67,7 +67,7 @@ class fifo_monitor extends uvm_monitor;
   endtask
 endclass
 
-// ===================== Agent =====================
+//  Agent 
 class fifo_agent extends uvm_agent;
   `uvm_component_utils(fifo_agent)
   fifo_driver                 drv;
